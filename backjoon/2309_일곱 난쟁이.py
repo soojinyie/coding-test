@@ -68,8 +68,12 @@ for i in range (9):
 
 num_lst.sort()
 target_num = sum - 100
+found = False
 
 for i in range (9):
+
+    if found: #정답을 찾았다면 for 문을 탈출
+        break
     cur_num = num_lst[i]
     searching_num = target_num - cur_num
     for j in range (i+1, 9):
@@ -77,4 +81,5 @@ for i in range (9):
             for k in range (9):
                 if k !=i and k!=j:
                     print(num_lst[k])
+            found = True
             break
